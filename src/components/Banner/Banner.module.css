@@ -1,0 +1,15 @@
+.banner {
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.corners img { 
+    width: 21%; 
+}
+
+.center img { 
+    width: 47%; 
+}
