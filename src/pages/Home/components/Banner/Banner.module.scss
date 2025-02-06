@@ -1,0 +1,47 @@
+.banner {
+    display: grid;
+    height: auto;
+    min-height: 80vh;
+    grid-template-columns: auto 1fr auto;
+    background-image: url("../../../../assets/Banner-BG.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px;
+
+    img {
+        // display: flex;
+        width: 100%;
+    }
+
+    .boxImg { max-width: 250px; }
+
+    .boxImg:nth-child(1) {
+        align-self: start;
+    }
+
+    .boxImg:nth-child(2) {
+        align-self: end;
+    }
+
+    .carsImg {
+        align-items: end;
+    }
+
+    @media screen and (max-width: 1230px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "textBox1 textBox2"
+            "cars cars";
+        
+        .boxImg {
+            width: 100%;
+        }
+
+        .boxImg:nth-child(1) { grid-area: textBox1; }
+        .boxImg:nth-child(2) { grid-area: textBox2; }
+
+
+        .carsImg { grid-area: cars; }
+    }
+}

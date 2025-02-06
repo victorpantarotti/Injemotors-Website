@@ -1,0 +1,39 @@
+@use "../../../../styles/mixins";
+
+.aboutUs {
+    @include mixins.defaultBox();
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    h2 {
+        width: 25%;
+        margin: 0;
+        text-align: end;
+        padding: 15px;
+    }
+    
+    p {
+        width: 50%;
+        margin: 0;
+        padding: 15px;
+        border-left: 5px solid white;
+    }
+
+    @media screen and (max-width: 1024px) {
+        text-align: center;
+        flex-direction: column;
+
+        h2 {
+            width: 100%;
+            text-align: center;
+        }
+        
+        p {
+            width: 100%;
+            border-left: 0;
+        }
+    }
+}

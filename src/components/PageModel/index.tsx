@@ -1,15 +1,13 @@
-import { ReactElement } from "react"
 import Header from "../Header";
+import { Outlet } from "react-router-dom";
 
-interface PageModelProps {
-    page: ReactElement
-};
-
-const PageModel = ({ page }: PageModelProps) => {
+const PageModel = () => {
     return (
         <>
             <Header />
-            {page}
+            <main>
+                <Outlet />
+            </main>
         </>
     );
 };

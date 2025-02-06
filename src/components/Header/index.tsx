@@ -1,74 +1,26 @@
-import styled from "styled-components";
-import OutlinedLogo from "@/assets/logo-outlined.webp";
-import { Link } from "react-router-dom";
+import { IoMdMenu } from "react-icons/io";
 
-import styles from "./Header.module.css";
-import { FaFacebook, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-import { AiOutlineGlobal } from "react-icons/ai";
-import { Button, Dropdown } from "antd";
+import logoOutlined from "@/assets/logo_outlined.png";
 
-const Container = styled.div`
-    display: flex;
-    align-items: center;
-    align-self: center;
-    justify-content: space-between;
-    padding: 15px;
-`
-
-const items = [
-  {
-    key: '1',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-        1st menu item
-      </a>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-        2nd menu item
-      </a>
-    ),
-  },
-  {
-    key: '3',
-    label: (
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        3rd menu item
-      </a>
-    ),
-  },
-];
+import styles from "./Header.module.scss";
 
 const Header = () => {
     return (
         <header className={styles.header}>
-            <Container>
-                <img src={OutlinedLogo} alt="Logo da INJEMOTORS" />
-                <div className={styles.menu}>
-                    <ul className={styles.links}>
-                        <li>
-                            <Link className={styles.link} to={"/"}>Início</Link>
-                        </li>
-                        <li>
-                            <Link className={styles.link} to={"/"}>Serviços</Link>
-                        </li>
-                        <li>
-                            <Link className={styles.link} to={"/"}>Quem Somos</Link>
-                        </li>
-                        <li>
-                            <Link className={styles.link} to={"/"}>Loja</Link>
-                        </li>
-                        <li>
-                            <Link className={styles.link} to={"/"}>Contato</Link>
-                        </li>
-                    </ul>
-                </div>
-            </Container>
+            <img src={logoOutlined} alt="Logo da INJEMOTORS" />
+            <div>
+                <label className={styles.menuMobile} htmlFor="menuMobileInput"><IoMdMenu /></label>
+                <input type="checkbox" className={styles.menuMobileInput} id="menuMobileInput" />
+                <ul className={styles.linksList}>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#avaliacoes">Avaliações</a></li>
+                    <li><a href="#localizacao">Nossa localização</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
         </header>
-    )
-};
+    );
+}
 
 export default Header;
