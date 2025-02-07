@@ -1,6 +1,7 @@
 import Banner from "./components/Banner";
 import AboutUs from "./components/AboutUs";
 import Services from "./components/Services";
+import Address from "./components/Address";
 
 export default function Home() {
     return (
@@ -8,6 +9,7 @@ export default function Home() {
             <Banner />
             <AboutUs />
             <Services />
+            <Address />
         </>
     );
 }

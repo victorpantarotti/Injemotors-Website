@@ -1,0 +1,44 @@
+@use "../../../../styles/mixins";
+
+.address {
+    @include mixins.defaultBox();
+
+    height: 50vh;
+
+    .title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        height: 100%;
+        
+        .infos {
+            align-self: center;
+            justify-self: center;
+            padding: 15px;
+
+            &__title { font-size: 32px; }
+
+            .mapLink {
+                display: flex;
+                width: max-content;
+                color: white;
+                text-decoration: none;
+                gap: 5px;
+                padding: 8px;
+                border: 2px solid white;
+                border-radius: 8px;
+            }
+        }
+
+        .mapEmbed {
+            width: 75%;
+            margin: 0;
+            padding-right: 15px;
+            border: 0;
+            border-right: 5px solid white;
+        }
+    }
+}

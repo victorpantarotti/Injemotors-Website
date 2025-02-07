@@ -1,28 +1,18 @@
-import { BsFuelPumpFill } from "react-icons/bs";
+import services from "@/data/services";
 
 import styles from "./Services.module.scss";
 
 const Services = () => {
     return (
-        <section className={styles.services}>
+        <section className={styles.services} id="servicos">
             <h2>Nossos serviços</h2>
             <ul>
-                <li>
-                    <BsFuelPumpFill />
-                    <h3>Injeção Eletrônica</h3>
-                </li>
-                <li>
-                    <BsFuelPumpFill />
-                    <h3>Injeção Eletrônica</h3>
-                </li>
-                <li>
-                    <BsFuelPumpFill />
-                    <h3>Injeção Eletrônica</h3>
-                </li>
-                <li>
-                    <BsFuelPumpFill />
-                    <h3>Injeção Eletrônica</h3>
-                </li>
+                {services.map((service, i) => (
+                    <li key={i}>
+                        {service.icon}
+                        <h3>{service.label}</h3>
+                    </li>
+                ))}
             </ul>
         </section>
     );

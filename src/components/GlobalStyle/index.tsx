@@ -29,6 +29,11 @@ const GlobalStyle = createGlobalStyle`
         color: white;
         font-family: "Montserrat";
     }
+
+    /* h2 {
+        font-family: "HandelGotDBol";
+        font-weight: lighter;
+    } */
 `;
 
 export default GlobalStyle;
