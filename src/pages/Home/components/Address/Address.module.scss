@@ -1,44 +1,72 @@
 @use "../../../../styles/mixins";
 
 .address {
-    @include mixins.defaultBox();
+    background-color: var(--primaryColor);
+    padding: 75px 0 30px;
+    clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
 
-    height: 50vh;
+    .wrapper {
+        @include mixins.defaultBox();
 
-    .title {
-        font-size: 32px;
-        text-align: center;
-    }
-
-    .container {
-        display: flex;
-        height: 100%;
-        
-        .infos {
-            align-self: center;
-            justify-self: center;
-            padding: 15px;
-
-            &__title { font-size: 32px; }
-
-            .mapLink {
-                display: flex;
-                width: max-content;
-                color: white;
-                text-decoration: none;
-                gap: 5px;
-                padding: 8px;
-                border: 2px solid white;
-                border-radius: 8px;
-            }
+        .title {
+            margin-top: 0;
+            font-size: 32px;
+            text-align: center;
         }
-
-        .mapEmbed {
-            width: 75%;
-            margin: 0;
-            padding-right: 15px;
-            border: 0;
-            border-right: 5px solid white;
+    
+        .container {
+            display: flex;
+            height: 55vh;
+            align-items: center;
+            justify-content: center;
+            
+            .infos {
+                padding: 20px;
+    
+                &__title {
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    font-size: 32px;
+                }
+    
+                .infos__address { margin-bottom: 0; }
+                .openingHours { margin-top: 0; }
+    
+                .mapLink {
+                    display: flex;
+                    width: max-content;
+                    color: white;
+                    text-decoration: none;
+                    gap: 5px;
+                    padding: 8px;
+                    border: 2px solid white;
+                    border-radius: 8px;
+                }
+            }
+    
+            .mapEmbed {
+                width: 75%;
+                height: 100%;
+                margin: 0;
+                padding-right: 20px;
+                border: 0;
+                border-right: 5px solid white;
+            }
+    
+            @media screen and (max-width: 1024px) {
+                height: 75vh;
+                flex-direction: column;
+                text-align: center;    
+                
+                .infos .mapLink { justify-self: center; }
+            
+                .mapEmbed {
+                    width: 100%;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 15px;
+                }
+            }
         }
     }
 }

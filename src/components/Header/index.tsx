@@ -14,7 +14,7 @@ const Header = () => {
                 <ul className={styles.linksList}>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#avaliacoes">Avaliações</a></li>
+                    {/* <li><a href="#avaliacoes">Avaliações</a></li> */}
                     <li><a href="#localizacao">Nossa localização</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>

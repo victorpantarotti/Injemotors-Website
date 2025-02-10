@@ -2,8 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import HandelGotDBol from "./fonts/HandelGotDBol.ttf";
 import Montserrat from "./fonts/Montserrat.ttf";
 
-import "./normalize.css";
-
 const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: "HandelGotDBol";
@@ -25,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: black;
+        background-color: var(--secondaryColor);
         color: white;
         font-family: "Montserrat";
     }
@@ -34,6 +32,17 @@ const GlobalStyle = createGlobalStyle`
         font-family: "HandelGotDBol";
         font-weight: lighter;
     } */
+    
+    ::-webkit-scrollbar { width: 7px; }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgb(9, 14, 25);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--primaryColor);
+        border-radius: 10px;
+    }
 `;
 
 export default GlobalStyle;

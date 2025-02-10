@@ -1,47 +1,39 @@
 .banner {
-    display: grid;
-    height: auto;
-    min-height: 80vh;
+    height: 80vh;
     grid-template-columns: auto 1fr auto;
     background-image: url("../../../../assets/Banner-BG.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 15px;
+    box-sizing: border-box;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+    
+    .container {
+        display: flex;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 0 12px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
 
-    img {
-        // display: flex;
-        width: 100%;
-    }
+        h1 { margin: 0; }
+        p { margin: 5px 0 15px; }
 
-    .boxImg { max-width: 250px; }
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            border: 2px solid white;
+            border-radius: 15px;
+            transition: .4s;
 
-    .boxImg:nth-child(1) {
-        align-self: start;
-    }
-
-    .boxImg:nth-child(2) {
-        align-self: end;
-    }
-
-    .carsImg {
-        align-items: end;
-    }
-
-    @media screen and (max-width: 1230px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "textBox1 textBox2"
-            "cars cars";
-        
-        .boxImg {
-            width: 100%;
+            &:hover {
+                background-color: white;
+                color: black;
+            }
         }
-
-        .boxImg:nth-child(1) { grid-area: textBox1; }
-        .boxImg:nth-child(2) { grid-area: textBox2; }
-
-
-        .carsImg { grid-area: cars; }
     }
 }

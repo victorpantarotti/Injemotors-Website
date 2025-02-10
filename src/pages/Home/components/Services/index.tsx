@@ -9,8 +9,11 @@ const Services = () => {
             <ul>
                 {services.map((service, i) => (
                     <li key={i}>
-                        {service.icon}
-                        <h3>{service.label}</h3>
+                        <img src={service.img} alt={service.label} />
+                        <div>
+                            <h3>{service.label}</h3>
+                            <p>{service.description}</p>
+                        </div>
                     </li>
                 ))}
             </ul>
